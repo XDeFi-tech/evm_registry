@@ -5,6 +5,10 @@ const chainIconMapping = {
   7000: `https://raw.githubusercontent.com/XDeFi-tech/evm_registry/main/assets/zetachain-icon%404x.png`,
 };
 
+const rpcMapping = {
+  7000: `https://zetachain-evm.blockpi.network/v1/rpc/public`,
+};
+
 export async function lambdaHandler(event, context) {
   const apiUrl = "https://chainid.network/chains.json";
 
@@ -17,6 +21,13 @@ export async function lambdaHandler(event, context) {
       }
       if (chainIconMapping.hasOwnProperty(chain.chainId)) {
         chain.icon = chainIconMapping[chain.chainId];
+      }
+      if (rpcMapping.hasOwnProperty(chain.chainId)) {
+        try {
+          chain.rpc.unshift(rpcMapping[chain.chainId]);
+        } catch (e) {
+          console.log(e);
+        }
       }
       return chain;
     });
