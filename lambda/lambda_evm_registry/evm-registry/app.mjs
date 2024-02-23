@@ -3,6 +3,7 @@ import axios from "axios";
 const chainIconMapping = {
   1907: `https://raw.githubusercontent.com/XDeFi-tech/evm_registry/main/assets/bitci_logo.png`,
   7000: `https://raw.githubusercontent.com/XDeFi-tech/evm_registry/main/assets/zetachain-icon%404x.png`,
+  10242: `https://raw.githubusercontent.com/XDeFi-tech/evm_registry/main/assets/arthera_icon.svg`
 };
 
 const rpcMapping = {
