@@ -8,6 +8,7 @@ const chainIconMapping = {
 
 const rpcMapping = {
   7000: `https://zetachain-evm.blockpi.network/v1/rpc/public`,
+  81457: `https://rpc.blast.io`,
 };
 
 export async function lambdaHandler(event, context) {
